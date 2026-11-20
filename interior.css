@@ -281,6 +281,24 @@
     }
 }
 
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    .timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .era:nth-child(4n + 2):not(:last-child)::before {
+        content: "";
+        position: absolute;
+        top: 56px;
+        left: 50%;
+        width: calc(100% + 24px);
+        height: 4px;
+        background: #7FA5D3;
+        z-index: 0;
+    }
+}
+
 @media (min-width: 401px) and (max-width: 768px) {
 
     .hero-main {
