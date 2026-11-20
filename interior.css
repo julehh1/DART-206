@@ -1,6 +1,4 @@
-/* =========================
-   HERO
-========================= */
+/* =======================HERO======================= */
 
 .meme-hero {
     display: grid;
@@ -28,6 +26,7 @@
 .meme-collage img {
     width: 100%;
     max-width: 700px;
+    align-items: center;
 }
 
 .hero-text {
@@ -55,9 +54,7 @@
     margin-left: auto;
 }
 
-/* =========================
-   TIMELINE
-========================= */
+/* ===================TIMELINE====================== */
 
 .timeline-section {
     background: #F5F2EA;
@@ -151,9 +148,7 @@
     border: 3px solid #111;
 }
 
-/* =========================
-   HIGHLIGHTS
-========================= */
+/* =============HIGHLIGHTS================== */
 
 .highlight-section {
     background: #AFC6A5;
@@ -176,7 +171,6 @@
 .highlight-heading p {
     max-width: 500px;
     font-size: 20px;
-    font-weight: 700;
 }
 
 .highlight-grid {
@@ -212,9 +206,7 @@
     line-height: 1.5;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* =======================TABLET====================== */
 
 @media (max-width: 1100px) {
 
@@ -362,9 +354,7 @@
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================MOBILE===================== */
 
 @media (max-width: 400px) {
 
