@@ -80,6 +80,10 @@
     padding-bottom: 20px;
 }
 
+.timeline-row {
+    display: contents;
+}
+
 .timeline::before {
     content: "";
 
@@ -249,9 +253,9 @@
     }
 
     .timeline {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
         overflow: visible;
         padding-bottom: 0;
     }
@@ -260,42 +264,35 @@
         display: none;
     }
 
+    .timeline-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        position: relative;
+    }
+
+    .timeline-row:first-child {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .timeline-row::before {
+        content: "";
+        position: absolute;
+        top: 47px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #7FA5D3;
+        z-index: 1;
+    }
+
     .era {
         min-width: 0;
     }
 
-    .era:nth-child(odd):not(:last-child)::before {
-        content: "";
-        position: absolute;
-        top: 56px;
-        left: 50%;
-        width: calc(100% + 24px);
-        height: 4px;
-        background: #7FA5D3;
-        z-index: 0;
-    }
-
     .era .dot {
         position: relative;
-        z-index: 1;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1100px) {
-
-    .timeline {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .era:nth-child(4n + 2):not(:last-child)::before {
-        content: "";
-        position: absolute;
-        top: 56px;
-        left: 50%;
-        width: calc(100% + 24px);
-        height: 4px;
-        background: #7FA5D3;
-        z-index: 0;
+        z-index: 3;
     }
 }
 
@@ -346,6 +343,16 @@
         font-size: 36px;
     }
 
+    .timeline-row {
+        column-gap: 12px;
+    }
+
+    .era img {
+        width: clamp(64px, 17vw, 88px);
+        height: auto;
+        aspect-ratio: 1;
+    }
+
     .highlight-section {
         padding: 48px 24px;
     }
@@ -381,6 +388,10 @@
         padding: 0;
     }
 
+    .timeline-row {
+        display: contents;
+    }
+
     .timeline::before {
         display: none;
     }
@@ -395,7 +406,8 @@
         z-index: auto;
     }
 
-    .era:not(:last-child)::before {
+    .era:not(:last-child)::before,
+    .timeline-row:not(:last-child) .era:last-child::before {
         content: "";
         position: absolute;
         top: 25px;
